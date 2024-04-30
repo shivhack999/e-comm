@@ -1,0 +1,24 @@
+.logo{
+  height:40px;
+  width:auto;
+}
+.searchBox{
+    width:40vw;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border:1px solid white;
+}
+.navbarBg{
+    background-color:#484F57;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+@media (max-width:991px) {
+    .searchBox{
+        width:100%;
+    }
+    .navbarBg{
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+}

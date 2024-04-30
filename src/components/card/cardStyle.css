@@ -1,0 +1,40 @@
+
+/* card inner css*/
+.card-outer{
+    text-decoration: none;
+    border:none;
+    outline: none;
+}
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 24px;
+    z-index: 9999;
+}
+.card-img-top{
+    height:17rem;
+}
+.card-body{
+    margin-left:0rem;
+    padding-left:0rem;
+}
+.rupee{
+    margin-top:0rem;
+    padding-top:0rem;
+}
+
+.wishlist-icon:hover {
+    color: red;
+}
+.productOff{
+    background-color: #FF693A;
+    border:none;
+    color:white;
+    padding:8px 5px;
+}
+.card-title{
+    color:#FF693A;
+}
