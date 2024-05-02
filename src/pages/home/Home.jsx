@@ -30,7 +30,7 @@ const Home = () => {
         <div className="container-fluid p-3">
             <div className="d-flex flex-row productHeading pt-3">
               <h2 className="flex-grow-1 ps-2">Top View</h2>
-              <Link to="/view-all">
+              <Link to="/view-list">
                 <button className="btn btn-dark rounded-0">View All</button>
               </Link>
             </div>

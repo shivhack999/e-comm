@@ -8,7 +8,7 @@ const Router = () => {
     <React.Fragment>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/view-all" element={<ViewItems />}/>
+        <Route path="/view-list" element={<ViewItems />}/>
       </Routes>
     </React.Fragment>
     </>
