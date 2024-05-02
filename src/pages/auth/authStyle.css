@@ -1,0 +1,112 @@
+.userOuter{
+    border:2px solid  #dcdbdb;
+    border-radius: 4px;
+}
+.innerLeft{
+    background-color: #FF693A;
+}
+.vLine{
+    font-size: 48px;
+    font-weight: 1200;
+    padding: 0%;
+    margin: 0%;
+    margin-top: -20px;
+}
+.innerLeft p:first-child{
+    font-size: 16px;
+    opacity: 0.8;
+}
+.innerLeft p{
+    font-size:12px;
+    opacity: 0.7;
+    letter-spacing: 0.022rem;
+}
+.innerRight div p{
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.7;
+    line-height: 0.8rem;
+    letter-spacing: 0.022rem;
+}
+.innerRight input[type=text] , input[type=password]{
+    border: none;
+    border-left: 4px solid #FF693A;
+    line-height: 30px;
+    background-color: #f9f5f5;
+    padding: 3px;
+    padding-left: 7px;
+    width:280px;
+}
+.innerRight input[type=text]:focus  , input[type=password]:focus{
+    outline: none;
+}
+.innerRight form input[type=checkbox]{
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.countrtCode{
+    background-color: #FF693A;
+    color:white;
+    padding: 11.5px 5px 8.5px 5px;
+    font-size: 15px;
+    line-height: 53px;
+    letter-spacing: 0.048em;
+    font-weight: 600;
+}
+.countrtCodeForSign{
+    background-color: #FF693A;
+    color:white;
+    padding: 12px 5px 8px 5px;
+    font-size: 15px;
+    line-height: 53px;
+    letter-spacing: 0.048em;
+    font-weight: 600;
+}
+
+.btnLogin{
+    background-color:white;
+    color: #FF693A;
+    border: none;
+    padding:0px 10px 4px 10px;
+    border-radius: 2px;
+    border: 2px solid #FF693A;
+    width:280px;
+}
+.btnLogin:hover{
+    background-color:#FF693A;
+    color:white;
+    border: 2px solid  #FF693A;
+}
+.fp{
+    text-decoration: none;
+    font-size: 12px;
+}
+.innerRight hr{
+    border: none;
+    height: 3px;
+    background-color:black;
+    opacity: 0.2;
+    margin-top: 5px;
+}
+.innerRight span{
+    font-size: 12px;
+    text-align: right;
+}
+.innerRight span button{
+    background-color: transparent;
+    border: none;
+    color:blue;
+}
+.loginErrorMsg{
+    font-size: 12px;
+    color:#FF693A;
+    margin-top: -10px;
+    padding-top: 0px;
+}
+@media (max-width:685px) {
+    .innerLeft{
+        visibility: hidden;
+        width:0px;
+    }
+}
