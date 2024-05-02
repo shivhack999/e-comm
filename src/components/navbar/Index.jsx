@@ -19,7 +19,7 @@ const Index = () => {
   }
   }
   return (
-    <Navbar expand="lg" className='navbarBg'>
+    <Navbar expand="lg" className='navbarBg fixed-top'>
       <Container fluid >
         <Navbar.Brand href="#" className='text-white'><img src={logo} alt="One Price" className='logo'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll"/>
