@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoClose } from "react-icons/io5";
 import logo from '../../assets/logo.png';
 import "./Index.css";
 const Index = () => {
@@ -42,9 +43,9 @@ const Index = () => {
     
     {
       showContactUs && <section className={`contact-us-form-container`}>
-          <span className="close-form" onClick={() => setShowContactUs(false)}>&times;</span>
+          <span className="close-form" onClick={() => setShowContactUs(false)}><IoClose /></span>
           <div className={`contact-us-form`} style={{left: showContactUs? '50%' : '0%'}}>
-            <h2>Queries And Feedback Form</h2>
+            <h3>Queries & Feedback Form !</h3>
             <form action="#" onSubmit={(event) => {
               event.preventDefault();
               console.log("Submitted Successfully");
