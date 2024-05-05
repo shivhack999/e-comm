@@ -2,4 +2,4 @@
     import cartItems from "./reducer";
     export default combineReducers({
         cartItems,
-    })
+    });
