@@ -4,12 +4,20 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//redux start
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import rootReducer from './services/reducers/index'
+const store = createStore(rootReducer)
+console.warn("store data", store);
+// redux end
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <App/>
     </BrowserRouter>
-  </React.StrictMode>
+  </Provider>
 );
 

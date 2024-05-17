@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Slider from '../../components/slider/Slider';
-import Card from '../../components/card/card';
+import Card from '../../containers/CartContainer';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 import './homeStyle.css';
 import { Link } from 'react-router-dom';

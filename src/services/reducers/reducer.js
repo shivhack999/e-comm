@@ -10,8 +10,7 @@ export default function cartItems(state = initialState,action){
                 ...state,
                 cartDate:action.data
             }
-            break;
             default :
-            return state   
+            return state
     }
 }

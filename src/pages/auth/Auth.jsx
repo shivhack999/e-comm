@@ -1,120 +1,119 @@
 import React, { useState } from 'react'
 import { IoRemoveOutline } from "react-icons/io5";
 import './authStyle.css';
-
+import loader from '../../assets/loader.gif';
 
 const Auth = () => {
-   //for login start
+   //for registraion --Start 
    const [loginTab, setLoginTab] = useState(true); // true: show login; false
-   const [phoneNumber, setPhoneNumber] = useState('');
-   const [password, setPassword] = useState('');
-   const [errors, setErrors] = useState({});
- 
- 
-   const validatePhoneNumber = () => {
-     const isValid = /^\d{10}$/.test(phoneNumber);
-     return isValid ? '' : 'Please enter a valid 10-digit phone number.';
-   };
-   const validatePassword = () => {
-     const isValid = password.length >= 8;
-     return isValid ? '' : 'Password must be at least 8 characters long.';
-   };
- 
-   const handlePhoneNumberChange = (e) => {
-     setPhoneNumber(e.target.value);
-   };
- 
-   const handlePasswordChange = (e) => {
-     setPassword(e.target.value);
-   };
- 
-   const handleSubmit = (e) => {
+   const [name, setName] = useState();
+   const [mobile, setMobile] = useState();
+   const [password, setPassword] = useState();
+   const [confirmP, setConfirmP] = useState();
+
+  // It is store registraion error 
+  const [errors, setErrors] = useState({
+    name: '',
+    mobile: '',
+    password: '',
+    confirmP: ''
+  });
+  
+  // this useState uses for registration button disable after click
+  const [regBtnDisable,setRegBtnDisable] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+   const rSubmit = async(e) => {
      e.preventDefault();
-     const phoneError = validatePhoneNumber();
-     const passwordError = validatePassword();
-     setErrors({ phone: phoneError, password: passwordError });
- 
-     // If no errors, submit the form
-     if (!phoneError && !passwordError) {
-       // Your submission logic here
-       console.log('Form submitted!');
-     }
-   }
-   //for login end
- 
-   const [fullName, setFullName] = useState('');
-   const [phoneNumberForSignup, setPhoneNumberForSignup] = useState('');
-   const [newPassword, setNewPassword] = useState('');
-   const [confirmPassword, setConfirmPassword] = useState('');
-   const [errorsForSignup, setErrorsForSignup] = useState({
-     fullName: '',
-     phoneNumberForSignup: '',
-     newPassword: '',
-     confirmPassword: ''
-   });
- 
-   const validatePhoneNumberForSignup = () => {
-     const isValid = /^\d{10}$/.test(phoneNumberForSignup);
-     return isValid ? '' : 'Please enter a valid 10-digit phone number.';
-   };
- 
-   const validatePasswordForSignup = () => {
-     const isValidLength = newPassword.length >= 8;
-     const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(newPassword);
-     const containsLetter = /[a-zA-Z]/.test(newPassword);
-     const containsNumber = /[0-9]/.test(newPassword);
- 
-     return isValidLength && containsSpecialChar && containsLetter && containsNumber
-       ? ''
-       : 'Password must be at least 8 characters long and contain at least one special character, alphabet, and number.';
-   };
-   // For Registration
-   const signupSubmit = (e) => {
-     e.preventDefault();
- 
-     setErrorsForSignup({
-       fullName: '',
-       phoneNumberForSignup: '',
-       newPassword: '',
-       confirmPassword: ''
-     });
- 
-     if (!fullName || !phoneNumberForSignup || !newPassword || !confirmPassword) {
-       setErrorsForSignup({
-         fullName: !fullName ? 'Full name is required.' : '',
-         phoneNumberForSignup: !phoneNumberForSignup ? 'Phone number is required.' : '',
-         newPassword: !newPassword ? 'New password is required.' : '',
-         confirmPassword: !confirmPassword ? 'Confirm password is required.' : ''
-       });
+     
+    //  It is remove all error massage after click submit button 
+    //  because if are not remove then error show after click submit button or 
+    // after error currection 
+     setErrors({
+      name: '',
+      mobile: '',
+      password: '',
+      confirmP: ''
+    });
+
+    // check input field empty or not start
+    if (!name || !mobile || !password || !confirmP) {
+      setErrors({
+        name: !name ? 'Full name is required.' : '',
+        mobile:!mobile ? 'Phone number is required.' : '',
+        password: !password ? 'New password is required.' : '',
+        confirmP: !confirmP ? 'Confirm password is required.' : ''
+      });
+      return;
+    }
+    // check input field empty or not end
+
+    // mobile number validation check start
+    const checkMobile = () => {
+      const isValid = /^\d{10}$/.test(mobile);
+      return isValid ? '' : 'Please enter a valid 10-digit mobile number.';
+    };
+    const mobileError = checkMobile();
+     if (mobileError) {
+       setErrors({ ...errors, mobile: mobileError });
        return;
      }
- 
-     // Validate phone number
-     const phoneError = validatePhoneNumberForSignup();
-     if (phoneError) {
-       setErrorsForSignup({ ...errorsForSignup, phoneNumberForSignup: phoneError });
-       return;
-     }
- 
-     // Validate password
-     const passwordError = validatePasswordForSignup();
+    // mobile number validation check end
+
+    // password validation check start 
+    const  checkPassword= () => {
+      const isValidLength = password.length >= 8;
+      const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+      const containsLetter = /[a-zA-Z]/.test(password);
+      const containsNumber = /[0-9]/.test(password);
+  
+      return isValidLength && containsSpecialChar && containsLetter && containsNumber
+        ? ''
+        : 'Password must be at least 8 characters long and contain at least one special character, alphabet, and number.';
+    };
+
+    const passwordError = checkPassword();
      if (passwordError) {
-       setErrorsForSignup({ ...errorsForSignup, newPassword: passwordError });
+       setErrors({ ...errors, password: passwordError });
        return;
      }
- 
-     // Check if passwords match
-     if (newPassword !== confirmPassword) {
-       setErrorsForSignup({ ...errorsForSignup, confirmPassword: 'Passwords do not match.' });
-       return;
+    // password validation check end
+
+
+
+    // confirm password validation check start
+    if (password !== confirmP) {
+      setErrors({ ...errors, confirmP: 'Passwords do not match.' });
+      return;
+    }
+      setRegBtnDisable(true);
+      setLoading(true);
+     const res = await fetch("/register",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        name,mobile,password
+      })
+     });
+     const data = await res.json();
+     console.log(data);
+
+     if(res.status === 404 || !data){
+      alert("error");
+      console.log("error");
+     }else{
+      alert("Registration successful!");
+      console.log('Registration successful!');
      }
- 
-     // If all validations pass, submit the form
-     console.log('Registration successful!');
+     
+    
    };
 
   return (
     <>
+    {loading && <img src={loader} alt='Loading.....' className="loader"/>}
        <div className="d-flex align-items-center justify-content-center" style={{height:'80vh'}}>
         <div className="userOuter d-flex flex-row shadow-lg bg-body rounded">
           <div className="innerLeft text-white p-4 d-flex flex-column align-items-center justify-content-center">
@@ -132,11 +131,9 @@ const Auth = () => {
                 <h2>Login Account !</h2>
                 <p>Please sign in to access your<br/>account and continue your shopping<br/> experience.</p>
               </div>
-              <form onSubmit={handleSubmit}>
-                  <span className='countrtCode'>+91</span><input type="text" style={{width:'250px'}} className='mText mb-3' placeholder='Phone Number' value={phoneNumber} onChange={handlePhoneNumberChange} /><br/>
-                  {errors.phone && <p className='loginErrorMsg'>{errors.phone}</p>}
-                  <input type="password" className="pText mb-3" placeholder='Password' value={password} onChange={handlePasswordChange}/><br/>
-                  {errors.password && <p className='loginErrorMsg'>{errors.password}</p>}
+              <form>
+                  <span className='countrtCode'>+91</span><input type="text" style={{width:'250px'}} className='mText mb-3' placeholder='Phone Number'/><br/>
+                  <input type="password" className="pText mb-3" placeholder='Password' /><br/>
                   <input type="checkbox" id="saveUser" className='mb-3' /><label htmlFor="saveUser">Keep me signed in</label><br/>
                   <button type="submit" className="btnLogin mb-1">Login</button>
               </form>
@@ -152,16 +149,17 @@ const Auth = () => {
                 <h2>Create Account !</h2>
                 <p>Create your account <br/>to unlock exclusive benefits and <br/> start shopping with ease.</p>
               </div>
-              <form onSubmit={signupSubmit}>
-                  <input type="text" className='mText mb-3' placeholder='Full Name'value={fullName} onChange={(e) => setFullName(e.target.value)}/><br/>
-                  {errorsForSignup.fullName && <p className='loginErrorMsg'>{errorsForSignup.fullName}</p>}
-                  <span className='countrtCodeForSign'>+91</span><input type="text" style={{width:'250px'}} className='mText mb-3' placeholder='Phone Number' value={phoneNumberForSignup} onChange={(e) => setPhoneNumberForSignup(e.target.value)}/><br/>
-                  {errorsForSignup.phoneNumberForSignup && <p className='loginErrorMsg'>{errorsForSignup.phoneNumberForSignup}</p>}
-                  <input type="password" className="pText mb-3" placeholder='New Password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /><br/>
-                  {errorsForSignup.newPassword && <p className='loginErrorMsg'>{errorsForSignup.newPassword}</p>}
-                  <input type="password" className="pText mb-3" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/><br/>
-                  {errorsForSignup.confirmPassword && <p className='loginErrorMsg'>{errorsForSignup.confirmPassword}</p>}
-                  <button type="submit" className="btnLogin mb-1">Signup</button>
+              <form onSubmit={rSubmit}>
+                  <input type="text" name="name" value={name} onChange={(e)=> setName(e.target.value)} className='mText mb-3' placeholder='Full Name'/><br/>
+                  <span className='countrtCodeForSign'>+91</span>
+                  <input type="text" name="mobile" value={mobile} onChange={(e)=> setMobile(e.target.value)} style={{width:'250px'}} className='mText mb-3' placeholder='Phone Number' /><br/>
+                  <input type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)} className="pText mb-3" placeholder='New Password'   /><br/>
+                  <input type="password" name="confirmP" value={confirmP} onChange={(e)=> setConfirmP(e.target.value)} className="pText mb-3" placeholder='Confirm Password' /><br/>
+                  {errors.name && <p className='loginErrorMsg'>{errors.name}</p>}
+                  {errors.mobile && <p className='loginErrorMsg'>{errors.mobile}</p>}
+                  {errors.password && <p className='loginErrorMsg'>{errors.password}</p>}
+                  {errors.confirmP && <p className='loginErrorMsg'>{errors.confirmP}</p>}
+                  <button type="submit" disabled={regBtnDisable} className="btnLogin mb-1">Signup</button>
               </form>
               <span>Already a member ? <button onClick={()=>{setLoginTab(true)}}>Login</button></span><br/>
            </>}

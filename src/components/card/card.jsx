@@ -3,7 +3,8 @@ import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import "./cardStyle.css";
 
-const card = () => {
+const card = (props) => {
+  console.warn("props",props);
   return (
     <>
       <a href="delails" className="card-outer">
