@@ -7,6 +7,7 @@ const Router = () => {
     <React.Fragment>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/user" element={<Auth />} />
       </Routes>
     </React.Fragment>
