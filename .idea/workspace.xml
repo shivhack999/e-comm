@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce38013e-3f30-446c-8da4-4603c8396d6f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/cardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/cardStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/Index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/router/Router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/router/Router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/slider/Slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/Slider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/viewItems/viewItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/viewItems/viewItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/viewItems/viewItemsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/viewItems/viewItemsStyle.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2ijSltMziEdqNraHshwrDMpS1dH" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce38013e-3f30-446c-8da4-4603c8396d6f" name="Default Changelist" comment="" />
+      <created>1720002649781</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720002649781</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -38,8 +38,8 @@ const Index = () => {
       </div>
     </footer>
     
-    {/* contact us form  */}
-    
+
+    {/* contact us form visible after clicking the contact-us of footer section */}
     {
       showContactUs && <section className={`contact-us-form-container`}>
           <span className="close-form" onClick={() => setShowContactUs(false)}>&times;</span>

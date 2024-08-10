@@ -9,7 +9,7 @@ const Home = () => {
     const scrollLeft = () => {
       if (scrollRef.current) {
         scrollRef.current.scrollTo({
-          left: scrollRef.current.scrollLeft - 100,
+          left: scrollRef.current.scrollLeft - 300,
           behavior: 'smooth', // Add smooth scrolling behavior
         });
       }
@@ -18,7 +18,7 @@ const Home = () => {
     const scrollRight = () => {
       if (scrollRef.current) {
         scrollRef.current.scrollTo({
-          left: scrollRef.current.scrollLeft + 100,
+          left: scrollRef.current.scrollLeft + 300,
           behavior: 'smooth', // Add smooth scrolling behavior
         });
       }

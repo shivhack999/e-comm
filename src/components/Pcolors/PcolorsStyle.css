@@ -1,0 +1,24 @@
+.p-color-text{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+.p-colors-container{
+    max-width: 100%;
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    padding: 3px 1px;
+    flex-wrap: wrap;
+}
+
+.p-colors-container > div:hover{
+    outline: 3px solid rgb(200, 200, 200);
+}
+
+.circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

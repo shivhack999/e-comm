@@ -1,6 +1,6 @@
 #view-items-container .view-items{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(256px, 257px)); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 18rem)); 
+    gap: 2px; 
     justify-content: space-evenly;
 }

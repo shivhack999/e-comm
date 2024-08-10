@@ -34,6 +34,7 @@
 .footer-menu div span{
     width: max-content;
     color: white;
+    transition: color 0.22s ease-in-out;
 }
 
 .footer-menu div span:hover{
@@ -65,7 +66,7 @@
     border-radius: 10px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
     transition: left 10s ease;
-    z-index: 10000;
+    z-index: 100;
 }
 
 /* .contact-us-form:hover{

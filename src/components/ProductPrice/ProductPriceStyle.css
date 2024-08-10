@@ -1,0 +1,16 @@
+.p-price{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.p-price .shipping-charges{
+    font-size: 13px;
+    padding: 3px 8px;
+    background-color: rgba(235, 235, 235);
+    font-style: italic;
+    font-weight: 700;
+    margin-left: 1rem;
+    text-transform: uppercase;
+}

@@ -1,0 +1,183 @@
+.profile-container{
+    margin-top: 4.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(230, 230, 230);
+    padding: 16px 0px;
+}
+
+.profile-menu-container{
+    width: 22rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 8px 16px; 
+    padding-right: 0;
+    border-radius: 5px;
+}
+
+.profile-menu-container > div{
+    width: 100%;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 8px 0px;
+}
+
+.profile-menu-container ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.my-order-options{
+    position: relative;
+}
+
+.profile-menu-container .option{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #000;
+}
+
+.profile-menu-container .option:hover{
+    width: 100%;
+    display: inline-block;
+    background-color: #fc9c7f;
+    color: #fff;
+}
+
+.profile-menu-container li{
+    font-size: 1.1rem;
+    padding: 8px 0px 8px 64px;
+}
+
+.user-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2px 32px;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-info-container{
+    width: 48rem;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px 24px;
+}
+
+.user-info-container .user-info{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.user-info .user-input-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.user-info .avatar-container{
+    padding: 16px;
+    border: 2px solid #fff;
+    background-color: rgb(230, 230, 230);
+}
+
+.avatar-container .avatar{
+    margin: auto;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    /* border: 2.5px solid #fff; */
+}
+
+.user-info .user-name{
+    display: flex;
+    gap: 32px;
+}
+
+.user-info .first, 
+.user-info .last 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 4px 8px;
+    border: 2.3px solid grey;
+    transition: border 0.5s ease-in-out;
+}
+
+.user-name input:focus{
+    border: 2.3px solid #000;
+}
+
+.phone-mail-container{
+    display: flex;
+    gap: 32px;
+}
+.user-info .email, 
+.user-info .phone 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-mail-container input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 4px 8px;
+    border: 2.3px solid grey;
+    transition: border 0.5s ease-in-out;
+}
+
+.phone-mail-container input:focus{
+    border: 2.3px solid #000;
+}
+
+.user-input-fields .save-info-btn{
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #FF693A;
+    background-color: #FF693A;
+    color: #fff;
+    padding: 6px 24px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.user-input-fields .save-info-btn:hover{
+    color: #FF693A;
+    background-color: #fff;
+    border: 2px solid #FF693A;
+}
+
+.faq-container{
+    width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px 48px 24px 32px;
+}
+
+.faq-container .heading{
+    text-decoration: underline;
+}
+
+.faq-container .questions-container .question{
+    font-weight: 500;
+    padding-top: 16px; 
+}
+
+.faq-container .questions-container .answer{
+    padding-top: 16px;
+}

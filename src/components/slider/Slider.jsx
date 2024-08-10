@@ -6,7 +6,7 @@ import './sliderStyle.css';
 const Slider = () => {
   return (
     <>
-        <Carousel  fade>
+      <Carousel  fade>
         <Carousel.Item>
             <a href="/a"><img src={image1} alt="" className='slider-img'/></a>
         </Carousel.Item>
