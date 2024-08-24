@@ -1,0 +1,22 @@
+.notifyme-container{
+    width: 100%;
+}
+
+.notifyme-container > div{
+    font-weight: 700;
+    width: 100%;
+    background-color: #484f57;
+    border: 3px solid #484f57;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.notifyme-container > div:hover{
+    color: #484f57;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 800;
+}

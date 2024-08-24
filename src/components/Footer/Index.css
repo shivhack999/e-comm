@@ -8,6 +8,7 @@
 .secton h2+h4{
     font-family: "Montserrat", sans-serif;
 }
+<<<<<<< HEAD
 .emailSub{  
     background-color: transparent;
     border: none;
@@ -20,6 +21,13 @@
     color:white;
     letter-spacing: 0.029rem;
     font-weight: 400;
+=======
+
+.footer-menu div span{
+    width: max-content;
+    color: white;
+    transition: color 0.22s ease-in-out;
+>>>>>>> prince
 }
 input::placeholder{
     color:white;

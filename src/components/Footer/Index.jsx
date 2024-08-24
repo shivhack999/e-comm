@@ -19,6 +19,7 @@ const Index = () => {
             <label> Get monthly updates and <br/> free resource. </label>
         </div>
       </div>
+<<<<<<< HEAD
       <div className="secton">
       <h5 className='mb-4'>Mobirise</h5>
         <p>Phone: +91 000 0000 001</p>
@@ -83,6 +84,41 @@ const Index = () => {
         </div>
     </section> 
   }
+=======
+    </footer>
+    
+
+    {/* contact us form visible after clicking the contact-us of footer section */}
+    {
+      showContactUs && <section className={`contact-us-form-container`}>
+          <span className="close-form" onClick={() => setShowContactUs(false)}>&times;</span>
+          <div className={`contact-us-form`} style={{left: showContactUs? '50%' : '0%'}}>
+            <h2>Queries And Feedback Form</h2>
+            <form action="#" onSubmit={(event) => {
+              event.preventDefault();
+              console.log("Submitted Successfully");
+              setShowContactUs(false);
+            }}>
+                <div className="form-group">
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div className="form-group">
+                    <label  htmlFor="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="message">Message:</label>
+                    <textarea id="message" name="message" rows={5} required></textarea>
+                </div>
+                <div className="form-group" style={{textAlign: 'center'}}>
+                  <input type="submit" value="Submit" />
+                </div>
+            </form>
+          </div>
+      </section> 
+    }
+>>>>>>> prince
   </>
   )
 }

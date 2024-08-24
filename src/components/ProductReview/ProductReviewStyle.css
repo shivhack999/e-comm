@@ -1,0 +1,26 @@
+.show-p-review{
+    margin-bottom: 0;
+}
+
+.review-stars{
+    position: relative;
+    display: inline-block;
+    padding: 0px 3px 0px 0px;
+}
+
+.star {
+    font-size: 18px;
+    color: #000;
+}
+  
+.star-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cnt-p-selled{
+    text-decoration: underline;
+}

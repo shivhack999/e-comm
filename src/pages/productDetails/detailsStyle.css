@@ -1,0 +1,362 @@
+.details-container{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 30px 0px;
+}
+
+.details{
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 0px 8px;
+}
+
+.p-info-container{
+    max-width: 100%;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.p-highlights-container{
+    width: 100%;
+    text-align: center;
+    background-color: rgba(240, 240, 240);
+}
+
+.p-highlights-container tr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #484f57;
+}
+
+.p-highlights-container tbody > tr:last-child{
+    border-bottom: none;
+}
+
+.p-highlights-container thead > tr{
+    font-size: 1.2rem;
+    padding: 16px; 
+}
+
+.p-highlights-container tbody > tr{
+    padding: 12px 0px;
+}
+
+.p-info{
+    width: 100%;
+    text-align: start;
+}
+
+.p-info .p-info-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #484f57;
+    padding: 16px 1.2px;
+}
+
+.p-info .updown{
+    transition: transform 0.4s ease;
+    transform-origin: center;
+}
+
+.p-info section:last-child{
+    border-bottom: 1px solid #484f57;
+}
+
+.p-info section:hover{
+    cursor: pointer;
+}
+
+.p-info .p-info-heading > span{
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.showList{
+    animation: openDrawer 0.5s ease forwards;
+}
+
+@keyframes openDrawer {
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(100%);
+    }
+}
+
+.p-info .p-info-description{
+    display: none;
+    /* position: fixed; */
+    padding-right: 32px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.p-info .explained-info{
+    padding-top: 10px;
+}
+
+.p-info .explained-info > div > span:first-of-type{
+    font-weight: 700;
+}
+
+.p-info .explained-info > div{
+    padding-bottom: 10px;
+}
+/* styling for products info those will be selected by user */
+
+.p-user-selection-container{
+    max-width: 100%;
+    width: 31rem;
+}
+
+.p-title{
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.p-price{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.show-p-review{
+    margin-bottom: 24px;
+}
+
+.review-stars{
+    font-size: 17px;
+    padding: 0px 3px 0px 0px;
+}
+
+.cnt-p-selled{
+    text-decoration: underline;
+}
+
+.p-price .shipping-charges{
+    font-size: 13px;
+    padding: 3px 8px;
+    background-color: rgba(235, 235, 235);
+    font-style: italic;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+.p-color-text{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+.p-colors-container{
+    max-width: 100%;
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    padding: 3px 1px;
+    flex-wrap: wrap;
+}
+
+.p-colors-container > div:hover{
+    outline: 3px solid rgb(200, 200, 200);
+}
+
+.circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.p-size-details{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-size-info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.p-size-text{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 0px;
+}
+
+.is-size-available{
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.p-sizes-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.7rem;
+    height: 3.7rem;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.square:hover{
+    background-color: rgb(211, 211, 211);
+    cursor: pointer;
+}
+
+.size-chart{
+    width: max-content;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 14px 0px 20px 0px;
+    font-weight: 700;
+}
+
+/* .buy-cart-container{
+    display: flex;
+    display: space-between;
+    gap: 8px;
+}
+
+.buy-cart-container > div{
+    font-weight: 600;
+    width: 100%;
+    background-color: #484f57;
+    border: 1px solid #484f57;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.buy-cart-container > div:hover{
+    color: #484f57;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid #484f57;
+} */
+
+
+.check-size-chart{
+    /* display: none; */
+    width: 95%;
+    height: 95vh;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1999;
+    padding: 64px;
+    box-shadow: 0px 0px 10px #484f57;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.size-table{
+    border-collapse: separate;
+    width: 20rem;
+}
+
+.size-table th, .size-table td{
+    text-align: center;
+    padding: 12px;
+    font-weight: 500;
+}
+
+.size-table th{
+    background-color: black;
+    color: white;
+    font-weight: 700;
+}
+.size-table td{
+    background-color: rgb(135, 206, 235, 0.6);
+}
+
+.pop-up-size-chart{
+    animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+    from{
+        transform: translate(-50%, 100%);
+    }
+
+    to{
+        transform: translate(-50%, -50%);
+    }
+}
+
+.content{
+    padding-top: 16px;
+}
+
+.size-working{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.size-working > span{
+    padding: 0px 0px 16px 0px;
+}
+
+.model-name{
+    padding-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.close-size-chart {
+    width: max-content;
+    height: max-content;
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.close-size-chart:hover{
+    transform: rotate(90deg);
+}
+
+.return-policy{
+    padding-top: 20px;
+}
+
+.review-banner{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    padding: 40px;
+}

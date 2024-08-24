@@ -13,6 +13,120 @@
     padding-left: 3rem;
     padding-right: 3rem;
   }
+
+.one-price-menu-container{
+  position: relative;
+}
+
+.one-price-menu-effect{
+  animation: slideIn 0.4s ease forwards;
+}
+
+/* @keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+} */
+
+.one-price-menu-container .menu-container{
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #484F57;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px #fff;
+}
+
+/* .one-price-menu .menu-container .access-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.access-btn > div{
+  margin-bottom: 8px;
+}
+
+.greeting{
+  font-weight: 600;
+}
+
+.access-btn .sign-log-btn{
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FF693A;
+  border-radius: 2px;
+}
+
+.access-btn .sign-log-btn:hover{
+    border-color: #FF693A;
+} */
+
+.one-price-menu-container .menu-container .access-btn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  padding: 10px 22px;
+  text-decoration: none;
+}
+
+.one-price-menu-container .menu-container .access-btn > div
+{
+  width: max-content;
+  padding: 0;
+}
+
+.access-btn .content{
+  font-weight: 700;
+  color: #fff;
+}
+
+.access-btn .sign-btn{
+  width: max-content;
+  cursor: pointer;
+  color: #FF693A;
+  text-decoration: none;
+}
+
+.one-price-menu-container .menu-container > .each-menu-card{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 28px;
+  text-decoration: none;
+}
+
+.one-price-menu-container .menu-container > .each-menu-card:last-child{
+  border-radius: 0px 0px 5px 5px;
+}
+
+.one-price-menu-container .menu-container > .each-menu-card:hover{
+  /* color: transparent;
+  -webkit-text-stroke: 1px #FF693A; */
+  background-color: #565e68;
+}
+
+.one-price-menu-container .each-menu-card > div{
+  width: max-content;
+  margin-left: 16px;
+}
+
+
 @media (max-width:991px) {
     .searchBox{
         width:100%;
@@ -20,5 +134,23 @@
     .navbarBg{
         padding-left: 1rem;
         padding-right: 1rem;
+      }
+
+      .one-price-menu-container{
+        margin: auto;
+      }
+
+      .one-price-menu-container .one-price-menu-btn{
+        display: flex;
+        justify-content: center;
+      }
+
+      .one-price-menu-container .menu-container{
+        position: static;
+      }
+
+      .one-price-menu-container .menu-container .access-btn
+      {
+        width: auto;
       }
 }

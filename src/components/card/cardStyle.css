@@ -12,7 +12,7 @@
     color: #ccc;
     text-decoration: none;
     font-size: 24px;
-    z-index: 9999;
+    z-index: 10;
 }
 .card-img-top{
     height:17rem;
@@ -22,8 +22,8 @@
     padding-left:0rem;
 }
 .rupee{
-    margin-top:0rem;
-    padding-top:0rem;
+    margin-top:0;
+    padding-top:0;
 }
 
 .wishlist-icon:hover {
