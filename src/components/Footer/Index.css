@@ -61,7 +61,7 @@ input::placeholder{
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -10px;
+    bottom: -5px;
     left: 0;
     background-color: white;
     transition: width 0.3s ease;
