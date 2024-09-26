@@ -1,16 +1,5 @@
-<<<<<<< HEAD
-.loader {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%;
-  height: auto;
-}
-=======
 *{
     margin: 0;
     box-sizing: border-box;
     padding: 0;
 }
->>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
