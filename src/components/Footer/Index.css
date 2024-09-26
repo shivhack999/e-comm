@@ -9,6 +9,9 @@
     font-family: "Montserrat", sans-serif;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
 .emailSub{  
     background-color: transparent;
     border: none;
@@ -21,6 +24,7 @@
     color:white;
     letter-spacing: 0.029rem;
     font-weight: 400;
+<<<<<<< HEAD
 =======
 
 .footer-menu div span{
@@ -74,6 +78,60 @@ input::placeholder{
     background-color: white;
     transition: width 0.3s ease;
 } 
+.secton p a:hover::after {
+    width: 100%;
+}
+
+=======
+}
+input::placeholder{
+    color:white;
+    opacity: 1;
+}
+.subscribe button{
+    padding:10px 20px 10px 20px;
+    letter-spacing: 0.044rem;
+}
+.subscribe label{
+    word-spacing: 2;
+    color: #bababa;
+    font-weight: 300;
+}
+.social-icons{
+    margin-top: 40px;
+}
+.social-icons a{
+    color:#bababa;
+    border: 1px solid #bababa;
+    border-radius: 50%;
+    margin-right: 5px;
+    padding: 8px 10px 8px 10px;
+}
+.secton p{
+    line-height: 10px;
+    letter-spacing: 0.062rem;
+    
+}
+.secton p a{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+}
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
+
+.secton p a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+} 
+
 .secton p a:hover::after {
     width: 100%;
 }

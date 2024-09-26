@@ -20,9 +20,15 @@ const Index = () => {
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="secton">
       <h5 className='mb-4'>Mobirise</h5>
         <p>Phone: +91 000 0000 001</p>
+=======
+      <div className="secton">
+        <h5 className='mb-4'>Mobirise</h5>
+        <p>Phone: +91 7011128872</p>
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
         <p>Email: yourmail@example.com</p>
         <p>Address: 1234 Street Name City, AA <br/><br/> 99999</p>
         <div className="social-icons">
@@ -39,6 +45,7 @@ const Index = () => {
           <p><a href="a">Shipping</a></p>
           <p><a href="a">FAQ</a></p>
           <p><a href="a">Cancellation & Returns</a></p>
+<<<<<<< HEAD
 
           <h5 className='mb-3 mt-5'>Company</h5>
           <p className="contact-us"><a onClick={() => setShowContactUs(true)}>Contact Us</a></p>
@@ -119,6 +126,53 @@ const Index = () => {
       </section> 
     }
 >>>>>>> prince
+=======
+
+          <h5 className='mb-3 mt-5'>Company</h5>
+          <p className="contact-us"><a onClick={() => setShowContactUs(true)}>Contact Us</a></p>
+          <p>About Us</p>
+          <p>Career</p>
+      </div>
+      <div className="secton">
+      <h5 className='mb-4'>Consumer Policy</h5>
+        <p><a href="a">Cancellation & Returns</a></p>
+        <p><a href="a">Terms & Condition</a></p>
+        <p><a href="a">Security</a></p>
+        <p><a href="a">Policy</a></p>
+        <p><a href="a">Sitemap</a></p>
+      </div>
+    </div>
+
+  {
+    showContactUs && <section className={`contact-us-form-container`}>
+        <span className="close-form" onClick={() => setShowContactUs(false)}><IoClose /></span>
+        <div className={`contact-us-form`} style={{left: showContactUs? '50%' : '0%'}}>
+          <h3>Queries & Feedback Form !</h3>
+          <form action="#" onSubmit={(event) => {
+            event.preventDefault();
+            console.log("Submitted Successfully");
+            setShowContactUs(false);
+          }}>
+              <div className="form-group">
+                  <label htmlFor="name">Name:</label>
+                  <input type="text" id="name" name="name" required />
+              </div>
+              <div className="form-group">
+                  <label  htmlFor="email">Email:</label>
+                  <input type="email" id="email" name="email" required />
+              </div>
+              <div className="form-group">
+                  <label htmlFor="message">Message:</label>
+                  <textarea id="message" name="message" rows={5} required></textarea>
+              </div>
+              <div className="form-group" style={{textAlign: 'center'}}>
+                <input type="submit" value="Submit" />
+              </div>
+          </form>
+        </div>
+    </section> 
+  }
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
   </>
   )
 }
