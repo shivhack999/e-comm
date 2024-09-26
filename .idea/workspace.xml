@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce38013e-3f30-446c-8da4-4603c8396d6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/cardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/cardStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/Index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/router/Router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/router/Router.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/slider/Slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/Slider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/viewItems/viewItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/viewItems/viewItems.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/viewItems/viewItemsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/viewItems/viewItemsStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/slider/sliderStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/sliderStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

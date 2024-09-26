@@ -1,46 +1,77 @@
-.footer{
-    background-color: #484F57;
-    padding: 64px 32px;
-}
-
-.footer > div{
-    text-align: center;
-}
-
-.footer > div >img{
-    width: 20rem;
-    height: 8rem;
-    margin: 1rem;
-}
-
-.footer-menu{
-    width: 80%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0px 32px;
-}
-
-.footer-menu div{
+.footer {
+    background-color: #232323;
+    color: #ffffff;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
 }
-
-.footer-menu h3{
-    color: #FF693A;
+.secton h2+h4{
+    font-family: "Montserrat", sans-serif;
 }
-
-.footer-menu div span{
-    width: max-content;
-    color: white;
-    transition: color 0.22s ease-in-out;
+.emailSub{  
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline:none;
+    font-size: 1.1rem;
+    padding: 1px;
+    padding-bottom:10px;
+    width:250px;
+    color:white;
+    letter-spacing: 0.029rem;
+    font-weight: 400;
 }
-
-.footer-menu div span:hover{
+input::placeholder{
+    color:white;
+    opacity: 1;
+}
+.subscribe button{
+    padding:10px 20px 10px 20px;
+    letter-spacing: 0.044rem;
+}
+.subscribe label{
+    word-spacing: 2;
+    color: #bababa;
+    font-weight: 300;
+}
+.social-icons{
+    margin-top: 40px;
+}
+.social-icons a{
+    color:#bababa;
+    border: 1px solid #bababa;
+    border-radius: 50%;
+    margin-right: 5px;
+    padding: 8px 10px 8px 10px;
+}
+.secton p{
+    line-height: 10px;
+    letter-spacing: 0.062rem;
+    
+}
+.secton p a{
+    position: relative;
+    display: inline-block;
     cursor: pointer;
-    color: #FF693A;
+    text-decoration: none;
+    color:white;
 }
+
+.secton p a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+} 
+
+.secton p a:hover::after {
+    width: 100%;
+}
+
 
 .contact-us-form-container{
     width: 100%;
@@ -68,10 +99,6 @@
     transition: left 10s ease;
     z-index: 100;
 }
-
-/* .contact-us-form:hover{
-    left: 50%;
-} */
 
 .feedback-form h2 {
     color: #484F57;
