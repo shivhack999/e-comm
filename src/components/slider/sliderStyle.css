@@ -1,4 +1,8 @@
+.slider-image-container{
+    height: 91.6vh;
+}
+
 .slider-img{
     width: 100vw;
-    margin-top: 4.1rem;
+    object-fit: fill;
 }

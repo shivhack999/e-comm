@@ -40,6 +40,11 @@
 .innerRight input[type=text]:focus  , input[type=password]:focus{
     outline: none;
 }
+
+.innerRight input::placeholder {
+    color: #000;
+}
+
 .innerRight form input[type=checkbox]{
     margin-top: 15px;
     padding-top: 10px;

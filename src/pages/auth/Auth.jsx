@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 >>>>>>> prince
 
 const Auth = () => {
+<<<<<<< HEAD
    //for registraion --Start 
    const [loginTab, setLoginTab] = useState(true); // true: show login; false
 <<<<<<< HEAD
@@ -90,86 +91,100 @@ const Auth = () => {
    const [storeOtp, setStoreOtp] = useState('');
    const [seconds, setSeconds] = useState(0);
   
+=======
+  //for login start
+  const [loginTab, setLoginTab] = useState(true); // true: show login; false
+  const [fillPersonalInfo, setFillPersonalInfo] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
+  const [otpVerificationPage, setOtpVerificationPage] = useState(false);
+  const [storeOtp, setStoreOtp] = useState('');
+  const [seconds, setSeconds] = useState(0);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(false);
+
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
   useEffect(() => {
-      let interval = setInterval(() => {
-          if (seconds > 0) {
-              setSeconds((prevSecond) => prevSecond - 1);
-          }
-      }, 1000);
-      return () => {
-          clearInterval(interval);
-      };
+    let interval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds((prevSecond) => prevSecond - 1);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
   }, [seconds]);
 
-   const validatePhoneNumber = () => {
-     const isValid = /^\d{10}$/.test(phoneNumber);
-     return isValid ? '' : 'Please enter a valid 10-digit phone number.';
-   };
+  const validatePhoneNumber = () => {
+    const isValid = /^\d{10}$/.test(phoneNumber);
+    return isValid ? '' : 'Please enter a valid 10-digit phone number.';
+  };
 
-   const validatePassword = () => {
-     const isValid = password.length >= 8;
-     return isValid ? '' : 'Password must be at least 8 characters long.';
-   };
- 
-   const handlePhoneNumberChange = (e) => {
-     setPhoneNumber(e.target.value);
-   };
- 
-   const handlePasswordChange = (e) => {
-     setPassword(e.target.value);
-   };
- 
-   const handleSubmit = (e) => {
-     e.preventDefault();
-     const phoneError = validatePhoneNumber();
-     const passwordError = validatePassword();
-     setErrors({ phone: phoneError, password: passwordError });
- 
-     // If no errors, submit the form
-     if (!phoneError && !passwordError) {
-       // Your submission logic here
-       console.log('Form submitted!');
-     }
-   }
+  const validatePassword = () => {
+    const isValid = password.length >= 8;
+    return isValid ? '' : 'Password must be at least 8 characters long.';
+  };
 
-   //for Registration of New Customer
-   const [fullName, setFullName] = useState('');
-   const [phoneNumberForSignup, setPhoneNumberForSignup] = useState('');
-   const [newPassword, setNewPassword] = useState('');
-   const [confirmPassword, setConfirmPassword] = useState('');
-   const [errorsForSignup, setErrorsForSignup] = useState({
-     fullName: '',
-     phoneNumberForSignup: '',
-     newPassword: '',
-     confirmPassword: ''
-   });
- 
-   const validatePhoneNumberForSignup = () => {
-     const isValid = /^\d{10}$/.test(phoneNumberForSignup);
-     return isValid ? '' : 'Please enter a valid 10-digit phone number.';
-   };
- 
-   const validatePasswordForSignup = () => {
-     const isValidLength = newPassword.length >= 8;
-     const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(newPassword);
-     const containsLetter = /[a-zA-Z]/.test(newPassword);
-     const containsNumber = /[0-9]/.test(newPassword);
- 
-     return isValidLength && containsSpecialChar && containsLetter && containsNumber
-       ? ''
-       : 'Password must be at least 8 characters long and contain at least one special character, alphabet, and number.';
-   };
-   
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phoneError = validatePhoneNumber();
+    const passwordError = validatePassword();
+    setErrors({ phone: phoneError, password: passwordError });
+
+    // If no errors, submit the form
+    if (!phoneError && !passwordError) {
+      // Your submission logic here
+      console.log('Form submitted!');
+    }
+  }
+
+  //for Registration of New Customer
+  const [fullName, setFullName] = useState('');
+  const [phoneNumberForSignup, setPhoneNumberForSignup] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorsForSignup, setErrorsForSignup] = useState({
+    fullName: '',
+    phoneNumberForSignup: '',
+    newPassword: '',
+    confirmPassword: ''
+  });
+
+  const validatePhoneNumberForSignup = () => {
+    const isValid = /^\d{10}$/.test(phoneNumberForSignup);
+    return isValid ? '' : 'Please enter a valid 10-digit phone number.';
+  };
+
+  const validatePasswordForSignup = () => {
+    const isValidLength = newPassword.length >= 8;
+    const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(newPassword);
+    const containsLetter = /[a-zA-Z]/.test(newPassword);
+    const containsNumber = /[0-9]/.test(newPassword);
+
+    return isValidLength && containsSpecialChar && containsLetter && containsNumber
+      ? ''
+      : 'Password must be at least 8 characters long and contain at least one special character, alphabet, and number.';
+  };
+
 
   // Mobile verification
   const sendOtpAPI = async () => {
     const mobile = "+91" + phoneNumberForSignup;
     const sendRequest = await fetch('http://localhost:8080/users/sendOTP', {
-      method: 'POST', 
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }, 
-      body: JSON.stringify({mobile})
+      },
+      body: JSON.stringify({ mobile })
     })
 
     const response = await sendRequest.json();
@@ -180,7 +195,7 @@ const Auth = () => {
   const handleSendOTP = async (e) => {
     e.preventDefault();
     if (!phoneNumberForSignup) {
-      setErrorsForSignup({ 
+      setErrorsForSignup({
         ...errorsForSignup, phoneNumberForSignup: !phoneNumberForSignup ? 'Phone number is required.' : '',
       });
       return;
@@ -189,19 +204,19 @@ const Auth = () => {
     // Validate phone number
     const phoneError = validatePhoneNumberForSignup();
     if (phoneError) {
-        setErrorsForSignup({ ...errorsForSignup, phoneNumberForSignup: phoneError });
-        return;
+      setErrorsForSignup({ ...errorsForSignup, phoneNumberForSignup: phoneError });
+      return;
     }
 
     const response = await sendOtpAPI();
     console.log(response);
-    const {success, msg} = response;
-    if(success){
+    const { success, msg } = response;
+    if (success) {
       setOtpVerificationPage(() => true);
       console.log(msg);
       setSeconds(60);
     }
-    else{
+    else {
       console.log("Enter the valid mobile number");
     }
 
@@ -214,21 +229,21 @@ const Auth = () => {
   const verifyOtpAPI = async () => {
     const mobile = "+91" + phoneNumberForSignup;
     const sendRequest = await fetch('http://localhost:8080/users/verifyOTP', {
-      method: 'POST', 
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({mobile: mobile, otp: storeOtp})
+      body: JSON.stringify({ mobile: mobile, otp: storeOtp })
     });
 
     const response = await sendRequest.json();
     console.log(response);
     const { success } = response;
-    if(success){
+    if (success) {
       console.log("Verification Successful");
       setFillPersonalInfo(true);
     }
-    else{
+    else {
       const { msg } = response;
       setErrorForOtpVerification(msg);
       console.log(msg);
@@ -236,66 +251,67 @@ const Auth = () => {
   }
 
   const isOtpMatch = (e) => {
-    e.preventDefault();  
+    e.preventDefault();
     verifyOtpAPI();
     setOtpVerificationPage(null);
   }
 
 
-   // Posting the user Information in the back-end
-   const RegisterUser = async () => {
-      const userRegistrationAPI = await fetch('http://localhost:8080/users/register', {
-        method: 'POST', 
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name: fullName, mobile: phoneNumberForSignup, password: newPassword})
-      })
+  // Posting the user Information in the back-end
+  const RegisterUser = async () => {
+    const userRegistrationAPI = await fetch('http://localhost:8080/users/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name: fullName, mobile: phoneNumberForSignup, password: newPassword })
+    })
 
-      const response = await userRegistrationAPI.json();
-      const {accessToken, refreshToken} = response;
-      console.log(accessToken, refreshToken);
-      console.log(response);
-      if(response.success){
-        console.log('Registration successful!');
-        window.location.href = 'http://localhost:3000';
-       }
-       else{
-        const {error} = response;
-        if(error === "Already Register Mobile Number."){
-          setErrorsForSignup({ ...errorsForSignup, phoneNumberForSignup:  error});
-          return;
-        }
-       }
-   }
+    const response = await userRegistrationAPI.json();
+    const { accessToken, refreshToken } = response;
+    console.log(accessToken, refreshToken);
+    console.log(response);
+    if (response.success) {
+      console.log('Registration successful!');
+      window.location.href = 'http://localhost:3000';
+    }
+    else {
+      const { error } = response;
+      if (error === "Already Register Mobile Number.") {
+        setErrorsForSignup({ ...errorsForSignup, phoneNumberForSignup: error });
+        return;
+      }
+    }
+  }
 
   // For Registration
-   const signupSubmit = (e) => {
-     e.preventDefault();
- 
-     setErrorsForSignup({
-       fullName: '',
-       phoneNumberForSignup: '',
-       newPassword: '',
-       confirmPassword: ''
-     });
- 
-     if (!fullName || !phoneNumberForSignup || !newPassword || !confirmPassword) {
-       setErrorsForSignup({
-         fullName: !fullName ? 'Full name is required.' : '',
-         phoneNumberForSignup: !phoneNumberForSignup ? 'Phone number is required.' : '',
-         newPassword: !newPassword ? 'New password is required.' : '',
-         confirmPassword: !confirmPassword ? 'Confirm password is required.' : ''
-       });
-       return;
-     }
- 
-     // Validate phone number
+  const signupSubmit = (e) => {
+    e.preventDefault();
+
+    setErrorsForSignup({
+      fullName: '',
+      phoneNumberForSignup: '',
+      newPassword: '',
+      confirmPassword: ''
+    });
+
+    if (!fullName || !phoneNumberForSignup || !newPassword || !confirmPassword) {
+      setErrorsForSignup({
+        fullName: !fullName ? 'Full name is required.' : '',
+        phoneNumberForSignup: !phoneNumberForSignup ? 'Phone number is required.' : '',
+        newPassword: !newPassword ? 'New password is required.' : '',
+        confirmPassword: !confirmPassword ? 'Confirm password is required.' : ''
+      });
+      return;
+    }
+
+    // Validate phone number
     //  const phoneError = validatePhoneNumberForSignup();
     //  if (phoneError) {
     //    setErrorsForSignup({ ...errorsForSignup, phoneNumberForSignup: phoneError });
     //    return;
     //  }
+<<<<<<< HEAD
  
      // Validate password
      const passwordError = validatePasswordForSignup();
@@ -426,25 +442,45 @@ const Auth = () => {
     {loading && <img src={loader} alt='Loading.....' className="loader"/>}
        <div className="d-flex align-items-center justify-content-center" style={{height:'80vh'}}>
 =======
+=======
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
 
-     RegisterUser();
-     
-   };
+    // Validate password
+    const passwordError = validatePasswordForSignup();
+    if (passwordError) {
+      setErrorsForSignup({ ...errorsForSignup, newPassword: passwordError });
+      return;
+    }
+
+    // Check if passwords match
+    if (newPassword !== confirmPassword) {
+      setErrorsForSignup({ ...errorsForSignup, confirmPassword: 'Passwords do not match.' });
+      return;
+    }
+
+    RegisterUser();
+
+  };
 
 
   return (
     <>
+<<<<<<< HEAD
       <div className="d-flex align-items-center justify-content-center m-5" style={{height:'80vh'}}>
 >>>>>>> prince
+=======
+      <div className="d-flex align-items-center justify-content-center m-5" style={{ height: '80vh' }}>
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
         <div className="userOuter d-flex flex-row shadow-lg bg-body rounded">
           <div className="innerLeft text-white p-4 d-flex flex-column align-items-center justify-content-center" >
-            <p className='mb-4'>Nice to see you Again :)</p>   
+            <p className='mb-4'>Nice to see you Again :)</p>
             <h1> WELCOME BACK</h1>
             <IoRemoveOutline className='vLine' />
-            <p>To keep connected with us please 
-               login with<br/>personal information !</p>
+            <p>To keep connected with us please
+              login with<br />personal information !</p>
           </div>
           <div className="innerRight p-5">
+<<<<<<< HEAD
             {loginTab 
             && 
             <>
@@ -501,63 +537,102 @@ const Auth = () => {
                   </div>
                   <form onSubmit={handleSendOTP}>
                       <span className='countrtCodeForSign'>+91</span><input type="text" style={{width:'250px'}} className='mText mb-3' placeholder='Phone Number' value={phoneNumberForSignup} onChange={(e) => setPhoneNumberForSignup(e.target.value)}/><br/>
+=======
+            {loginTab
+              &&
+              <>
+                <div className="d-flex flex-column align-items-center justify-content-center mb-4">
+                  <h2>Login Account !</h2>
+                  <p>Please sign in to access your<br />account and continue your shopping<br /> experience.</p>
+                </div>
+                <form onSubmit={handleSubmit}>
+                  <span className='countrtCode'>+91</span><input type="text" style={{ width: '250px' }} className='mText mb-3' placeholder='Phone Number' value={phoneNumber} onChange={handlePhoneNumberChange} /><br />
+                  {errors.phone && <p className='loginErrorMsg'>{errors.phone}</p>}
+                  <input type="password" className="pText mb-3" placeholder='Password' value={password} onChange={handlePasswordChange} /><br />
+                  {errors.password && <p className='loginErrorMsg'>{errors.password}</p>}
+                  <input type="checkbox" id="saveUser" className='mb-3' onChange={(event) => setRememberMe(event.target.value)} /><label htmlFor="saveUser">Keep me signed in</label><br />
+                  <button type="submit" className="btnLogin mb-1">Login</button>
+                </form>
+                <a href='/fp' className='fp'>Forgot your password?</a>
+                <hr></hr>
+                <span>Don't have an  account ? <button onClick={() => {
+                  setLoginTab(false)
+                }}>Signup.</button></span><br />
+              </>}
+
+
+            {!loginTab &&
+              <>
+                {otpVerificationPage !== null && !otpVerificationPage &&
+                  <>
+                    <div className="d-flex flex-column align-items-center justify-content-center mb-3">
+                      <h2>Create Account !</h2>
+                      <p>Create your account <br />to unlock exclusive benefits and <br /> start shopping with ease.</p>
+                    </div>
+                    <form onSubmit={handleSendOTP}>
+                      <span className='countrtCodeForSign'>+91</span><input type="text" style={{ width: '250px' }} className='mText mb-3' placeholder='Phone Number' value={phoneNumberForSignup} onChange={(e) => setPhoneNumberForSignup(e.target.value)} /><br />
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
                       {errorsForSignup.phoneNumberForSignup && <p className='loginErrorMsg'>{errorsForSignup.phoneNumberForSignup}</p>}
                       <button type="submit" className="btnLogin mb-1">Send OTP</button>
-                  </form>
-                  <span>Already a member ? <button onClick={()=>{setLoginTab(true)}}>Login</button></span><br/>
-                </>  
-              }
-              {otpVerificationPage && 
-                <>
-                  <div className="d-flex flex-column align-items-center justify-content-center mb-3"> 
-                    <h2>OTP Verification !</h2>
-                    <p>You will receive<br/>an OTP that has been sended on<br/><strong><em>{phoneNumberForSignup}</em></strong></p>
-                    <div>
-                      <span className='timer'>{seconds}s ? </span> 
-                      <span style={{fontStyle: 'italic', color: 'blue', cursor: seconds === 0 ? 'pointer' : 'not-allowed'}} onClick={() => {
-                        if(seconds === 0){
-                          sendOtpAPI();
-                          setSeconds(59);
-                        }
-                      }} >Resend OTP</span>
+                    </form>
+                    <span>Already a member ? <button onClick={() => { setLoginTab(true) }}>Login</button></span><br />
+                  </>
+                }
+                {otpVerificationPage &&
+                  <>
+                    <div className="d-flex flex-column align-items-center justify-content-center mb-3">
+                      <h2>OTP Verification !</h2>
+                      <p>You will receive<br />an OTP that has been sended on<br /><strong><em>{phoneNumberForSignup}</em></strong></p>
+                      <div>
+                        <span className='timer'>{seconds}s ? </span>
+                        <span style={{ fontStyle: 'italic', color: 'blue', cursor: seconds === 0 ? 'pointer' : 'not-allowed' }} onClick={() => {
+                          if (seconds === 0) {
+                            sendOtpAPI();
+                            setSeconds(59);
+                          }
+                        }} >Resend OTP</span>
+                      </div>
                     </div>
-                  </div>
-                  <form onSubmit={isOtpMatch}>
-                      <input type="text" className='mText mb-3' placeholder='Enter OTP' value={storeOtp} onChange={(e) => setStoreOtp(e.target.value)}/><br/>
+                    <form onSubmit={isOtpMatch}>
+                      <input type="text" className='mText mb-3' placeholder='Enter OTP' value={storeOtp} onChange={(e) => setStoreOtp(e.target.value)} /><br />
                       {errorForOtpVerification.length !== 0 && <p className='loginErrorMsg'>{errorForOtpVerification}</p>}
                       <button type="submit" className="btnLogin mb-1">Verify</button>
-                  </form>
-                  <span>Want to change mobile ? <button onClick={()=>{
-                    setOtpVerificationPage(false);
-                    setStoreOtp("");
-                    }}>Edit Mobile</button></span><br/>
-                </>  
-              }
+                    </form>
+                    <span>Want to change mobile ? <button onClick={() => {
+                      setOtpVerificationPage(false);
+                      setStoreOtp("");
+                    }}>Edit Mobile</button></span><br />
+                  </>
+                }
 
-              {fillPersonalInfo &&
-              <>
-                <div className="d-flex flex-column align-items-center justify-content-center mb-3"> 
-                  <h2>Create Account !</h2>
-                  <p>Create your account <br/>to unlock exclusive benefits and <br/> start shopping with ease.</p>
-                </div>
-                <form onSubmit={signupSubmit}>
-                    <input type="text" className='mText mb-3' placeholder='Full Name'value={fullName} onChange={(e) => setFullName(e.target.value)}/><br/>
-                    {errorsForSignup.fullName && <p className='loginErrorMsg'>{errorsForSignup.fullName}</p>}
-                    <span className='countrtCodeForSign'>+91</span><input type="text" style={{width:'250px'}} className='mText mb-3' placeholder='Phone Number' value={phoneNumberForSignup} disable='true'/><br/>
-                    {errorsForSignup.phoneNumberForSignup && <p className='loginErrorMsg'>{errorsForSignup.phoneNumberForSignup}</p>}
-                    <input type="password" className="pText mb-3" placeholder='New Password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /><br/>
-                    {errorsForSignup.newPassword && <p className='loginErrorMsg'>{errorsForSignup.newPassword}</p>}
-                    <input type="password" className="pText mb-3" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/><br/>
-                    {errorsForSignup.confirmPassword && <p className='loginErrorMsg'>{errorsForSignup.confirmPassword}</p>}
-                    <button type="submit" className="btnLogin mb-1">Next</button>
-                </form>
-                <span>Already a member ? <button onClick={()=>{setLoginTab(true)}}>Login</button></span><br/>
+                {fillPersonalInfo &&
+                  <>
+                    <div className="d-flex flex-column align-items-center justify-content-center mb-3">
+                      <h2>Create Account !</h2>
+                      <p>Create your account <br />to unlock exclusive benefits and <br /> start shopping with ease.</p>
+                    </div>
+                    <form onSubmit={signupSubmit}>
+                      <input type="text" className='mText mb-3' placeholder='Full Name' value={fullName} onChange={(e) => setFullName(e.target.value)} /><br />
+                      {errorsForSignup.fullName && <p className='loginErrorMsg'>{errorsForSignup.fullName}</p>}
+                      <span className='countrtCodeForSign'>+91</span><input type="text" style={{ width: '250px' }} className='mText mb-3' placeholder='Phone Number' value={phoneNumberForSignup} disable='true' /><br />
+                      {errorsForSignup.phoneNumberForSignup && <p className='loginErrorMsg'>{errorsForSignup.phoneNumberForSignup}</p>}
+                      <input type="password" className="pText mb-3" placeholder='New Password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} /><br />
+                      {errorsForSignup.newPassword && <p className='loginErrorMsg'>{errorsForSignup.newPassword}</p>}
+                      <input type="password" className="pText mb-3" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /><br />
+                      {errorsForSignup.confirmPassword && <p className='loginErrorMsg'>{errorsForSignup.confirmPassword}</p>}
+                      <button type="submit" className="btnLogin mb-1">Next</button>
+                    </form>
+                    <span>Already a member ? <button onClick={() => { setLoginTab(true) }}>Login</button></span><br />
+                  </>}
               </>}
+<<<<<<< HEAD
 >>>>>>> prince
            </>}
+=======
+>>>>>>> a894a7bf32db5568d56ba760b13103bcbf0149fb
           </div>
         </div>
-      </div> 
+      </div>
     </>
   )
 }
